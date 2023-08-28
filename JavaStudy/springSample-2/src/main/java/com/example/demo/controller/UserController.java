@@ -28,9 +28,9 @@ public class UserController {
   	public String displayList(Model model) {
 
     //3行追加
-		List<UserEntity> user = userService.searchAll();
-        model.addAttribute("user", user);
-        return "list";
+		List<UserEntity> userlist = userService.searchAll();
+        model.addAttribute("userlist", userlist);
+        return "user/list";
     }
 
 
