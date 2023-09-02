@@ -39,9 +39,9 @@ public class UserController {
         model.addAttribute("userlist", userlist);
         return "user/list";
     }
-	@GetMapping("/user/add")
+	@RequestMapping("/user/add")
 	public String displayAdd(Model model) {
-		
+		 model.addAttribute("userRequest", new UserRequest());
 		return "user/add";
 	}
 	/**
@@ -50,7 +50,7 @@ public class UserController {
 	 * @param  model Model
 	 * @return  ユーザー情報一覧画面
 	 */
-	@GetMapping("/user/create")
+	@RequestMapping("/user/create")
 	public String create(@Validated @ModelAttribute UserRequest userRequest, BindingResult result,  Model model) {
 		//入力判定入れること
 		  if (result.hasErrors()) {
